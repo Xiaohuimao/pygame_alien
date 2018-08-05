@@ -21,16 +21,15 @@ def run_game():
 	bullets=Group()
 	aliens=Group()
 	#创建外星人群
-	gf.create_fleet(ai_settings,screen,ship,aliens)
+	gf.create_fleet(ai_settings,screen ,aliens)
 	#开始游戏的主循环
 	while True:
 		#监视键盘和鼠标事件（事件是用户玩游戏时执行的操作）
 		#用户的所有事件
 		gf.check_events(ai_settings,screen,ship,bullets)
 		ship.update()
-		gf.update_bullets(ai_settings,screen,ship,aliens,bullets)
+		gf.update_bullets(bullets)
 		#print(len(bullets))
-		gf.update_aliens(ai_settings,aliens)
 		gf.update_screen(ai_settings,screen,ship,aliens,bullets)
 run_game()
 
